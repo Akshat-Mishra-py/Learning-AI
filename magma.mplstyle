@@ -1,0 +1,22 @@
+# Dark background and light axes, like the reference image.
+figure.facecolor: "000000"
+axes.facecolor: "#47004744"
+savefig.facecolor: black
+savefig.edgecolor: black
+
+axes.edgecolor: "FFFDFF"
+axes.labelcolor: "FFFDFF"
+axes.titlecolor: "#ffe8b0"
+text.color: "FFFAEF"
+xtick.color: "FFFDFF"
+ytick.color: "FFFDFF"
+axes.axisbelow: True
+
+# A purple grid works well for pixel-based plots; enable it per axes when needed.
+grid.color: "#4f127b"
+grid.alpha: 0.55
+grid.linestyle: "--"
+grid.linewidth: 0.6
+
+image.cmap: magma
+axes.prop_cycle: cycler('color', ["#fb9f6f", "#f25d63", "#d33f70", "#b5367a", "#fffcbf", "#812581"])
