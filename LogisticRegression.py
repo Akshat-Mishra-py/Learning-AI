@@ -134,11 +134,14 @@ if __name__ == "__main__":
 
     # Here starts the ML
     X = np.array(df_feature.values)
+    mean = X.mean(axis = 0)
+    std = X.std(axis=0)
+    X = (X - mean)/std
     Y = np.array(df["Survived"].values)
     x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
 
     #Training 
-    model = LogisticRegression(LossFunc=MeanSquaredError(), Activation=Sigmoid(), n_iter=2000, WShape=(X.shape[-1],), lr=0.02)
+    model = LogisticRegression(LossFunc=MeanSquaredError(), Activation=Sigmoid(), n_iter=1000, WShape=(X.shape[-1],), lr=2)
     model.fit(x_train,y_train)
     #Validate
     print(f"Loss on Test Set {model.validate(x_test, y_test)}")
