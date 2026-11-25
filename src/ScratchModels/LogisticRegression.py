@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 
 # Download latest version
 # path = kagglehub.dataset_download("yasserh/titanic-dataset",output_dir=".\dataset")
-dataset_path = os.path.join("./dataset", "Titanic-Dataset.csv")
+dataset_path = os.path.join("../../dataset", "Titanic-Dataset.csv")
 
 class Loss(ABC):
     @abstractmethod
@@ -146,7 +146,7 @@ if __name__ == "__main__":
     #Validate
     print(f"Loss on Test Set {model.validate(x_test, y_test)}")
 
-    model.save("./models/", "LogisticRegressModel.model")
+    model.save("../../models/", "LogisticRegressModel.model")
     y_pred = model.feed_forward(x_test)
     print("Surviving Probab|\t Did Survive")
     for i in range(len(x_test)):
